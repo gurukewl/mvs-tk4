@@ -1,4 +1,5 @@
 # A docker container containing a fully running MVS 3.8j
+This is the September 2022 Update of MVS 3.8 TK4 with ISPF, BREXX, NJE38, Intercomm. Also, several bug fixes for Algol, Cobol and JCC. New ISPF panels.  New version of Revedit, RPF, and IMON.  This is in many ways the update to MVS 3.8 TK4-v8. 
 
 ## Thank you to the following.
 * TK3 created by Volker Bandke       vbandke@bsp-gmbh.com http://www.bsp-gmbh.com/turnkey
