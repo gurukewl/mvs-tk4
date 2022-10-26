@@ -8,8 +8,9 @@ This is the September 2022 Update of MVS 3.8 TK4 with ISPF, BREXX, NJE38, Interc
 ## Usage
 
 ```
-docker run -dit --name tk4- \
+docker run -dit --name tk4 \
            -p 3270:3270 -p 8038:8038 \
+           gurukool/tk4-mvs
 ```
 
 Connect a 3270 terminal to port 3270 on the docker host.
