@@ -1,4 +1,4 @@
-FROM ubuntu:22.04 as builder
+FROM ubuntu:22.04
 
 ENV DEBIAN_FRONTEND noninteractive
 
@@ -17,8 +17,11 @@ RUN apt-get update && apt-get install -yq unzip apt-utils wget binutils && \
     apt-get -y autoclean && apt-get -y autoremove && \
     apt-get -y purge $(dpkg --get-selections | grep deinstall | sed s/deinstall//g) && \
     rm -rf /var/lib/apt/lists/* && \
-    rm -rf /archive.org
+    rm -rf /tk4/archive.org && \
+    rm -rf /tk4/ctca_demo && \ 
+    rm /tk4/README_*
 
+WORKDIR /tk4/
 VOLUME [ "/tk4/conf","/tk4/local_conf","/tk4/local_scripts","/tk4/prt","/tk4/dasd","/tk4/pch","/tk4/jcl","tk4/log" ]
 EXPOSE 3270 8038
-CMD ["/tk4/mvs"]
+ENTRYPOINT ["/tk4/mvs"]
